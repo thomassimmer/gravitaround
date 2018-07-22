@@ -22,15 +22,19 @@ directory::
     $ cd ~/gravitaround
     $ pip install .
 
-Once you have created and activated the necessary virtual environment, you can prepare the necessary database and run the server thanks to ``manage.py``::
+You need to open another terminal window and tap ::
 
     $ postgres -D /usr/local/var/postgres
 
-You possibly need to create a database and a user :
+Once you have created and activated the necessary virtual environment, you can prepare the necessary database and run the server thanks to ``manage.py`` in the first terminal window :
+
+You possibly need to create a database and a user ::
 
     $ psql postgres
     $ postgres=# CREATE DATABASE gravitaround;
     $ postgres=# CREATE USER gravitaround WITH SUPERUSER;
+    $ postgres=# \q;
+    
 
     $ ./manage.py makemigrations app
     $ ./manage.py migrate
