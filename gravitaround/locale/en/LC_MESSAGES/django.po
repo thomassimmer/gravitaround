@@ -1,0 +1,60 @@
+# English translations for cabio.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the cabio project.
+# Polyconseil dev team <autolib-dev@polyconseil.fr>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  cabio\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Polyconseil dev team <autolib-dev@polyconseil.fr>\n"
+"Language: en\n"
+"Language-Team: Polyconseil dev team <autolib-dev@polyconseil.fr>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+msgid "Attendees"
+msgstr ""
+
+msgid "Component"
+msgstr ""
+
+msgid "Creator"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "End time"
+msgstr ""
+
+msgid "Environment"
+msgstr ""
+
+msgid "Id Event"
+msgstr ""
+
+msgid "Organizer"
+msgstr ""
+
+msgid "Room"
+msgstr ""
+
+msgid "Start time"
+msgstr ""
+
+msgid "Week of "
+msgstr ""
+
+msgid "Your futur events are here :"
+msgstr "Your futur events are here :"
+
+msgid "event"
+msgstr ""
+
+msgid "events"
+msgstr ""
+

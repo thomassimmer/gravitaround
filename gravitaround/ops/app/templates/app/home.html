@@ -1,0 +1,142 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div id="conteneur">
+        <div id="cesiumContainer"></div>
+        <div id="tri">
+            <div id="category" >
+                <div class="orbit" id="research">Research</div>
+                <div class="row" id="ResearchBarRow">
+                        <input type="text" class="ResearchBar" id="rechercheBar" placeholder="Enter a satellite's name...">
+                </div>
+            </div>
+            <div id="category" >
+                <div class="orbit" id="researchCountries">Countries</div>
+                <div class="row" id="ResearchBarRow">
+                        <input type="text" class="ResearchBar" id="recherchePaysBar" placeholder="Choose a pays...">
+                </div>
+            </div>
+            <div id="category" >
+                <div class="orbit" id="orbit">Orbit</div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherLEOButton" value="LEO">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherMEOButton" value="MEO">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherGEOButton" value="GEO">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherHEOButton" value="HEO">
+                    </div>
+                </div>
+            </div>
+            <div id="category">
+                <div class="orbit" id="navigation">Navigation</div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherGPSButton" value="GPS">
+                    </div>
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherBeidouButton" value="Beidou">
+                    </div>
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherGalileoButton" value="Galileo">
+                    </div>
+                </div>
+            </div>
+            <div id="category">
+                <div class="orbit" id="others">Others</div>
+                <div class="row">
+
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherISSButton" value="ISS">
+                    </div>
+                    <div class="col-lg-5">
+                    <input type="button" class="Button" id="AfficherCubeSatsButton" value="CubeSats">
+                    </div>
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherEngineeringButton" value="Engineering">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                    <input type="button" class="Button" id="AfficherSpaceStationsButton" value="Space Stations">
+                    </div>
+                    <div class="col-lg-6">
+                    <input type="button" class="Button" id="AfficherGeodeticButton" value="Geodetic">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherWeatherButton" value="Weather">
+                    </div>
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherNOAAButton" value="NOAA">
+                    </div>
+                    <div class="col-lg-4">
+                    <input type="button" class="Button" id="AfficherGOESButton" value="GOES">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <input type="button" class="Button" id="AfficherSESButton" value="Space and Earth Science">
+                    </div>
+                    <div class="col-lg-3">
+                        <input type="button" class="Button" id="AfficherIridiumButton" value="Iridium">
+                    </div>
+                </div>
+            </div>
+            <div id="category" >
+                <div class="row">
+                    <div class="col-lg-4">
+                        <input type="button" class="Button" id="Localisation" value="Locate Me">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="button" class="Button" id="afficherButton" value="All">
+                    </div>
+                    <div class="col-lg-4">
+                        <input type="button" class="Button" id="supprimerButton" value="Delete All">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <input type="button" class="Button" id="updateButton" value="Update">
+                    </div>
+                    <div class="col-lg-7">
+                        <input type="button" class="Button" id="activateTrajectory" value="Trajectory">
+                    </div>
+                </div>
+            </div>
+            <div id="category" >
+                <div class="orbit" id="others">Favourites</div>
+                    {% for group in context %}
+                         <div class="row" style = "padding-top:10px";>#}
+                             <input type="button" class="Button" id=group.group_name value=group.group_name>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var viewer = new Cesium.Viewer('cesiumContainer', {
+        timeline : false,
+        animation : false,
+        fullscreenButton : false,
+        geocoder : false
+        });
+
+        var scene = viewer.scene;
+    </script>
+
+    {% if request.session.id %}
+    <div class='row' style='padding-bottom: 3%;' id='user_id'>{{ request.session.id }}</div>
+    {%  endif %}
+
+{% endblock %}

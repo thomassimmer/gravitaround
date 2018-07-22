@@ -1,0 +1,163 @@
+/** Generics **/
+
+.context { overflow: hidden; }
+.float-left { float: left; }
+.float-right { float: right; }
+.clear-both { clear: both; }
+.double-font-size { font-size: 200%; }
+.fill { width: 100%; height: 100%; }
+
+
+/** Necessary for new empty sheet **/
+
+.map--flexible {
+    height: 400px;
+    border: none;
+}
+.map400 {
+    width: 400px;
+    height: 400px;
+    border: 10px solid #fff;
+}
+.block-to-fill {
+    border: solid;
+    border-width: 1px;
+    padding: 1px;
+    background-color: #f0f0f0;
+    margin: 0px 0px 10px 0px;
+}
+.block-to-fill.technical-insert { height: 300px; }
+.block-to-fill.business-insert { height: 240px; }
+
+
+/** Technical insert **/
+.monitoring { line-height: 20px; }
+
+.monitoring-icon {
+    width: 27px;
+    height: 23px;
+    text-indent: -9999px;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.monitoring-icon.car { background: url('../img/map/car-sprite.png') no-repeat top left; }
+
+/* registration plate */
+.plate {
+    margin: 0;
+    font-size: 25px;
+    line-height: 25px;
+    background: black;
+    border: 3px;
+    color: #ddd;
+    box-shadow: 0 1px 3px black;
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    position: relative;
+}
+
+/* car state */
+.car-state { font-size: 16px; }
+
+/* car battery level */
+.car.battery-level-0{ background-position: 0 0; }
+.car.battery-level-20{ background-position: 0 -25px; }
+.car.battery-level-50{ background-position: 0 -50px; }
+.car.battery-level-80{ background-position: 0 -75px; }
+
+/* car battery charge level color */
+.car.battery-level-red{ background-position: 0 0; }
+.car.battery-level-orange{ background-position: 0 -25px; }
+.car.battery-level-green{ background-position: 0 -75px; }
+
+/* car docked or not */
+.car.docked-no{ background-position: 0 -100px; }
+.car.docked-yes{ background-position: 0 -125px; }
+
+/* car locked or not */
+.car.locked-no{ background-position: 0 -150px; }
+.car.locked-yes{ background-position: 0 -175px; }
+
+/* car charging or not */
+.car.battery-charging-no{ background-position: 0 -200px; }
+.car.battery-charging-yes{ background-position: 0 -225px; }
+
+/* car battery plugged or not */
+.car.battery-plugged-on { background-position: 0 -250px; }
+.car.battery-plugged-off { background-position: 0 -275px; }
+
+
+/** Adress insert **/
+.carsheets__address {
+    color: #757575;
+    font-size: 12px;
+}
+.carsheets__address--danger {
+    color: #a94442;
+}
+.address-insert {
+    background-color: #f0f0f0;
+    padding: 2px;
+    margin-top: 0px;
+    border: 1px solid rgb(200, 200, 200);
+}
+.map-marker  {
+    content: '';
+    position: relative;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    display: inline-block;
+    height: 20px;
+    width: 12px;
+    background: url('../img/map/gmap_icons.png') no-repeat -84px 0;
+}
+.map-marker.plug {
+    background-position: -84px 0;
+    width: 12px;
+}
+.map-marker.car {
+    background-position: -108px 0;
+}
+.map-marker+p {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+/** Case and task preview **/
+.case-state-new,
+.case-state-ongoing,
+.case-state-resolved,
+.case-state-closed,
+.task-state {
+    padding: 3px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+    color: #fff;
+}
+
+.case-state-new,
+.task-state.state-new,
+.task-state.state-need_reassign { background: #5dc7f4; }
+
+.case-state-ongoing,
+.task-state.state-pending_approval,
+.task-state.state-assigned,
+.task-state.state-accepted,
+.task-state.state-joining,
+.task-state.state-active { background: orange; }
+
+.case-state-resolved,
+.task-state.state-completed { background: #77c145; }
+
+.case-state-closed,
+.task-state.state-cancelled { background: #378104; }
+
+.task-state.state-failed { background: #d9534f; }
+
+
+/** Technical sheet **/
+.label-black { background-color: black; }

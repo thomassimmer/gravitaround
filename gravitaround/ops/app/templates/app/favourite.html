@@ -1,0 +1,77 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    {% if request.session.id %}
+        <div class="row" style="background-color: rgba(0, 0, 0, 0.8); padding-right: 250px; padding-left:250px;
+        padding-top:100px; padding-bottom:100px;">
+            <h2>
+                <div style='padding-bottom: 5%;'>Give a name to your list </div>
+                <div class='row' style='padding-bottom: 10%;' id='ResearchBarRow'>
+                    <input type='text' class='ResearchBar'  id='group_name' placeholder='Your groups name...'>
+                </div>
+                <div style='padding-bottom: 5%;' >Tap a satellite name & press enter</div>
+                <div class='row' style='padding-bottom: 3%;' id='ResearchBarRow'>
+                    <input type='text' class='ResearchBar'  id='sat_name' placeholder='Choose a satellite...'>
+                </div></br>
+                <div style='padding-bottom: 5%;' >When you are done, click above.</div>
+                <input type='button' class='ResearchBar' id='enter_button' value='Save it !'>
+                <div id='msg'> You are connected {{ request.session.prenom }}  {{ request.session.nom }} </br>
+                    <a href="{% url 'app:deconnect' %}" style = 'color : grey;'>Se déconnecter</a>
+                </div>
+            </h2>
+            <h2>
+                <div style='padding-bottom: 2%; color : white;' id='display_group'></div>
+                <div style='padding-bottom: 2%;' id='display_sat'></div>
+            </h2>
+            <h2>
+                <div style='padding-bottom: 2%;'>Already in your favorites </div>
+                {% for group in group_name %}
+                    <div class='row' style='padding-bottom: 3%;'></div>
+                    <div class="row" style = "padding-top:10px; ">
+                        <input type="button" class="Button" id={{ group.name }} value={{ group.name }}>
+                        {% for sat in group.sats %}
+                            <div style='font-size: 0.8em;' id={{ sat }}>{{ sat }}</div>
+                            <input type='button' class='ResearchBar' id="{{ group.name }}button" value='Delete it !'>
+                        {% endfor %}
+                        <script>
+                            $("#{{ group.name }}button").click(function () {
+                                $(this).toggleClass("down");
+                                let data = {name: '{{ group.name }}' };
+                                $.ajax({
+                                    url: "/gravitaround/delete_favourite_group/",
+                                    type : 'POST',
+                                    data : data ,
+                                    dataType : 'html',
+                                    success: function(){
+                                        location.reload()
+                                    },
+                                    error: function(){
+                                        alert("delete fail");
+                                    }
+                                });
+                            });
+                        </script>
+                    </div>
+                {% endfor %}
+{#                {% for groupe in "{% url 'app:favourite_group' user_id=request.session.id %}" %}#}
+{#                    <div style='padding-bottom: 6%; border:1px groove #121212;' id='groupe_"+str(i)+"' >#}
+{#                    <div class='orbit' style='color : white; padding-top: 2%;' id='groupe"+str(i)+"'>groupe[0]</div>#}
+{##}
+{#                    {% for sat in groupe[1:] %}#}
+{#                        <div style='font-size: 0.8em;' id='display_group'>"+sat+"</div>#}
+{#                        <input type='button' class='ResearchBar' id='delete_button"+str(i)+"' value='Delete it !'>#}
+{#                    {%  endfor %}#}
+{#                {%  endfor %}#}
+            </h2>
+        </div>
+        <div class='row' style='padding-bottom: 3%;' id='user_id'>{{ request.session.id }}</div>
+
+    {%  else %}
+                <div style='padding-bottom: 80px; padding-top:40px;' id='msg'>
+                    Create an account to save your favourite satellite</br>
+                <a href="{% url 'app:connexion' %}" style = 'color : grey;'>Se connecter</a>
+                </div>
+    {% endif %}
+{% endblock %}

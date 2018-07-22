@@ -1,0 +1,40 @@
+/********************************************************************************
+formulaires
+********************************************************************************/
+
+
+form
+{
+    margin:50px 0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea
+{
+    border:0;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: inset 2px 2px 0px 0px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    line-height: 1.25em;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+form textarea
+{
+    min-height: 11em;
+}
+
+::-webkit-input-placeholder,
+::-moz-placeholder,
+input:-moz-placeholder,
+:-ms-input-placeholder
+{
+    color: #555 !important;
+}
+
+form textarea {min-height: 11em;}

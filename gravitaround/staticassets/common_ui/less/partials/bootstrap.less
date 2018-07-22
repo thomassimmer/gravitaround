@@ -1,0 +1,161 @@
+/**
+ * Forms
+ */
+
+label {
+  font-weight: normal;
+}
+
+.form-control[type="file"] {
+  height: auto;
+}
+
+/**
+ * Navigation
+ */
+
+.navbar {
+  background-color: #F5F5F5;
+  text-transform: uppercase;
+
+  .multipark-bar {
+    background-color: #ccc;
+    color: #777;
+
+    .navbar-nav {
+      a {
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+  }
+
+  .navbar-version {
+    display: block;
+    line-height: 20px;
+    padding: 5px 10px;
+    text-transform: none;
+  }
+
+  .navbar-settings {
+    text-transform: none;
+
+    .dropdown-menu {
+      left: 0;
+    }
+  }
+}
+
+.navbar-default {
+  box-shadow: none;
+
+  .navbar-nav {
+    & > li {
+      & > a {
+        &:hover,
+        &:active,
+        &:focus {
+          .nav-link;
+        }
+      }
+
+      &.active {
+        & > a {
+          &,
+          &:hover,
+          &:active,
+          &:focus {
+            .nav-link;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs {
+  margin-bottom: 15px;
+}
+
+/**
+ * Alerts
+ */
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.alert-error hr {
+  border-top-color: #e6c1c7;
+}
+
+.alert-error .alert-link {
+  color: #953b39;
+}
+
+/**
+ * Modal
+ */
+
+.modal {
+    &.img-modal {
+        overflow: hidden;
+        width: 50%;
+        height: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+
+        .modal-dialog {
+            width: 100%;
+            height: 100%;
+            padding: 30px 30px 50px 10px;
+
+            .modal-content {
+                height: 100%;
+                padding-right: 20px;
+                padding-left: 20px;
+
+                .close {
+                    background-image: url(../img/close.png);
+                    position: absolute;
+                    right: -15px;
+                    top: -15px;
+                    opacity: 1;
+                    cursor: pointer;
+                    height: 35px;
+                    width: 35px;
+                    z-index: 2000;
+                }
+                .modal-header {
+                    height: 20px;
+                    padding: 0;
+                }
+                .modal-body {
+                    padding: 0;
+                    overflow: auto;
+                    .calc(height; "100% - 80px");
+
+                    .img {
+                      transition: -webkit-transform 0.05s ease;
+                    }
+                }
+                .modal-footer {
+                    padding: 5px;
+                    margin-top: 5px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}
+
+/* fix bug with input width */
+.input-group-addon {
+    width: auto;
+}
