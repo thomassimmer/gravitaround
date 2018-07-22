@@ -9,6 +9,7 @@ You'll need :
 
     - Python 3.6
     - pip package management tool
+    - Postgres
 
 Installation
 ------------
@@ -21,8 +22,18 @@ directory::
     $ cd ~/gravitaround
     $ pip install .
 
-Once you have created and activated the necessary virtual environment, you can run the server thanks to ``manage.py``::
+Once you have created and activated the necessary virtual environment, you can prepare the necessary database and run the server thanks to ``manage.py``::
 
+    $ postgres -D /usr/local/var/postgres
+
+You possibly need to create a database and a user :
+
+    $ psql postgres
+    $ postgres=# CREATE DATABASE gravitaround;
+    $ postgres=# CREATE USER gravitaround WITH SUPERUSER;
+
+    $ ./manage.py makemigrations app
+    $ ./manage.py migrate
     $ ./manage.py runserver
 
 Then, you can go at http://127.0.0.1:8000/ to see what gravit around your planet !
