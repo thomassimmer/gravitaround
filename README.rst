@@ -19,7 +19,8 @@ directory::
 
     $ virtualenv -p python3 venv
     $ . venv/bin/activate
-    $ cd ~/gravitaround
+    $ git clone https://github.com/thomassimmer/gravitaround.git
+    $ cd gravitaround
     $ pip install .
 
 You need to open another terminal window and tap ::
