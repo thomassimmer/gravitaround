@@ -1,0 +1,64 @@
+{% extends 'app/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <section>
+            <div id="countainer_demo" >
+                <a class="hiddenanchor" id="tosubscribe"></a>
+                <a class="hiddenanchor" id="tologin"></a>
+                <div id="wrapper">
+                    <div class='row' style='padding-bottom: 2%;'>
+                        <div id="login" class="animate form">
+                            <form  action="/gravitaround/authentication/" method="post" autocomplete="on">
+                                <h1> Sign in </h1>
+                                <p>
+                                    <label for="username" class="uname" data-icon="u" > Your username </label>
+                                    <input id="username" name="login" required="required" type="text"
+                                           placeholder="bernard22"/>
+                                </p>
+                                <p>
+                                    <label for="password" class="youpasswd" data-icon="p"> Your password </label>
+                                    <input id="password" name="motDePasse" required="required"
+                                           type="password" placeholder="eg.X8df!90EO"/>
+                                </p>
+                                <p class="keeplogin"> <input type="checkbox" name="loginkeeping"
+                                                             id="loginkeeping" value="loginkeeping" />
+                                    <label for="loginkeeping"> Keep me logged in </label>
+                                <p > <button type="submit" class="Button">Login </button> </p>
+                            </form>
+                        </div>
+                        <div id="subscribe" class="animate form">
+                            <form  style="margin-bottom: 0;" action="/gravitaround/new_user/" method="post" autocomplete="on">
+                                <h1> Sign up </h1>
+                                <p>
+                                    <label for="name" class="uname" data-icon="u" > Your Last Name </label>
+                                    <input id="name" name="nom" required="required" type="text" placeholder="Smith"/>
+                                </p>
+                                <p>
+                                    <label for="prenom" class="youmail" data-icon="e" > Your First Name </label>
+                                    <input id="prenom" name="prenom" required="required" type="text"
+                                           placeholder="Brandon"/>
+                                </p>
+                                <p>
+                                    <label for="username" class="youmail" data-icon="e" > Login </label>
+                                    <input id="username" name="login" required="required" type="text"
+                                           placeholder="bernard22"/>
+                                </p>
+                                <p>
+                                    <label for="motDePasse" class="youpasswd" data-icon="p">Your Password </label>
+                                    <input id="motDePasse" name="motDePasse" required="required" type="password"
+                                           placeholder="eg. X8df!90EO"/>
+                                </p>
+                                <p>
+                                    <input type="submit" class="Button" value="Sign up"/>
+                                </p>
+                            </form>
+                        </div>
+                   </div>
+               </div>
+            </div>
+        </section>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+.angular-google-map,
+.angular-google-map-container {
+  display: block;
+  height: 100%;
+}
+
+.angular-google-map .ng-scope p,
+.angular-google-map .ng-scope div {
+  white-space: nowrap;
+}
+
+.angular-google-map .btn-group-vertical,
+.angular-google-map .btn {
+  width: 100%;
+}
+
+.table > tbody > tr > td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table > tbody > tr.active > th,
+.table > tbody > tr.active > td {
+  background-color: #CCCCCC;
+  color: #000000;
+}
+
+.table > tbody > tr.selected > th,
+.table > tbody > tr.selected > td {
+  background-color: #009DDF;
+  color: #FFFFFF;
+}

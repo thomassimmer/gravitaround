@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages
 from setuptools import setup
 
-from cabio.version import VERSION
+from gravitaround.version import VERSION
 
 
 def read(filename):
@@ -28,21 +28,14 @@ setup(
          'django-localflavor<2',
          'django-plus',
          'django-dirtyfields',
-         'blease',
 
          # Libraries
-         'bluetils',
          'ephem',
          'lxml',
          'requests',
+         'psycopg2',
+         'raven',
 
-         # Settings management
-         'getconf',
-         'xmlrunner',
-         'pytz',
-
-         # APIs
-         'httplib2',
 
     ],
     classifiers=[

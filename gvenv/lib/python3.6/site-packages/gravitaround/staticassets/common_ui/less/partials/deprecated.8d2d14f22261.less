@@ -1,0 +1,44 @@
+/**
+ * jQuery UI Dialog
+ */
+.ui-dialog {
+  z-index: 1050 !important;
+
+  .ui-dialog-titlebar-close {
+    top: 15% !important;
+  }
+}
+
+/**
+ * List and detail views
+ */
+
+.with-detail {
+  cursor: pointer;
+
+  .highlight td {
+     background-color: #d0e9c6 !important;
+  }
+}
+
+.expand {
+  overflow: auto;
+  width: 100%;
+}
+
+#detail-view {
+  &.affix {
+    top: 100px;
+  }
+  &.affix, &.affix-top {
+    max-height: ~"calc(98vh - 100px)";
+    overflow: auto;
+  }
+}
+
+/**
+ * Bootstrap adaptive row
+ */
+.adaptive-row {
+  overflow: auto;
+}

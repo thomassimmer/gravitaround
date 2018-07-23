@@ -1,0 +1,11 @@
+/* Copyright (c) Polyconseil SAS. All rights reserved. */
+
+/* This is the main generic comments CSS file for all SI.
+   It complements base.html in ops.
+*/
+
+.comment-history .comment-date { color: #3875D7; }
+.comment-history .comment-user { color: #3875D7; }
+.comment-history .comment-text { width: 100%; display: block; }
+.comment-form textarea { width: 100%; height: 110px; }
+a.number { color: #fff !important; }
