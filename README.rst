@@ -1,6 +1,6 @@
 # Gravit'around
 
-A web app to allow you to watch your favourite satellites in real time around Earth.
+A web app to watch your favourite satellites in real time around Earth.
 
 Prerequisites
 ------------
@@ -10,6 +10,11 @@ You'll need :
     - Python 3.6
     - pip package management tool
     - Postgres
+    
+To install Postgres on Mac, you need first to install HomeBrew : ::
+
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ brew install Postgres
 
 Installation
 ------------
@@ -41,5 +46,5 @@ You possibly need to create a database and a user ::
     $ ./manage.py migrate
     $ ./manage.py runserver
 
-Then, you can go at http://127.0.0.1:8000/ to see what gravit around your planet !
+Then, you can go at http://127.0.0.1:8000/ to see what gravits around Earth !
 
