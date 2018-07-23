@@ -10,13 +10,16 @@ You'll need :
     - Python 3.6
     - pip package management tool
     - Postgres
-    
+    - Gdal
+
 To install Python : https://www.python.org/
 
 To install Postgres on Mac, you need first to install HomeBrew : ::
 
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew install Postgres
+    $ brew install gdal
+
 
 Installation
 ------------
@@ -38,11 +41,7 @@ Once you have created and activated the necessary virtual environment, you can p
 
 You possibly need to create a database and a user ::
 
-    $ psql postgres
-    $ postgres=# CREATE DATABASE gravitaround;
-    $ postgres=# CREATE USER gravitaround WITH SUPERUSER;
-    $ postgres=# \q;
-
+    $ ./manage.py createsuperuser
     $ ./manage.py makemigrations app
     $ ./manage.py migrate
     $ ./manage.py runserver
