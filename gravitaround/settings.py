@@ -7,40 +7,17 @@
 
 import os
 
-from googleapiclient.discovery import build
-from httplib2 import Http
-from oauth2client import client
-from oauth2client import file
-from oauth2client import tools
-
-from bluetils.settings import importer as settings_importer
-from bluetils.settings.config import load_config
-
 from gravitaround.version import VERSION
 
 
-# Configuration of Bluetils common settings
-# =========================================
-ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
-CHECKOUT_DIR = os.path.abspath(os.path.dirname(ROOT_DIR))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = ()
+SECRET_KEY = '4e&6aw+(5&cg^_!05r(&7_#dghg_pdgopq(yk)xa^bog7j)^*j'
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-PROJECT_NAME = 'gravitaround'
-SYSTEM_HRID = PROJECT_NAME
-SYSTEM_NAME = PROJECT_NAME
-
-CONFIG = load_config(PROJECT_NAME, CHECKOUT_DIR)
-
-SERVICE = CONFIG.getstr('service', 'core')
-
-settings_importer.include('bluetils.settings.common', globals(), locals())
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 # ======================
@@ -49,7 +26,7 @@ TEST_APPS = ()
 
 LANGUAGE_CODE = 'fr'
 
-MIDDLEWARE_CLASSES = COMMON_MIDDLEWARE_CLASSES + (
+MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -62,15 +39,6 @@ MIDDLEWARE_CLASSES = COMMON_MIDDLEWARE_CLASSES + (
 ROOT_URLCONF = 'gravitaround.ops.urls'
 
 DJANGO_APPS = (
-    'bluetils.blauth.apps.DefaultConfig',
-    'bluetils.common_ui.apps.DefaultConfig',
-    'bluetils.cron.apps.DefaultConfig',
-    'bluetils.django_plus.apps.DefaultConfig',
-    'bluetils.selftest.apps.SelftestConfig',
-    'bluetils.script_helpers',
-    'bluetils.services',
-    'bluetils.blauth_ldap',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,13 +59,12 @@ USE_TZ = True
 
 TIME_ZONE = 'Europe/Paris'
 
-INSTALLED_APPS = DJANGO_APPS + DEV_APPS
-
+INSTALLED_APPS = DJANGO_APPS
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(ROOT_DIR, "ops/app/templates")],
+        'DIRS': [os.path.join(BASE_DIR, "gravitaround/ops/app/templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -108,4 +75,24 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gravitaround',
+        'USER': 'gravitaround',
+        'PASSWORD': 'gravitaround',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    'gravitaround/staticassets/',
 ]

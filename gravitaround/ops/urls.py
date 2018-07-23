@@ -15,8 +15,3 @@ urlpatterns = [
     url(r'^gravitaround/', include('gravitaround.ops.app.urls')),
     url(r'^logout/$', auth_views.LoginView.as_view(), name='logout'),
 ]
-
-if settings.DEBUG_TOOLBAR:
-    import debug_toolbar
-
-    urlpatterns += [url(r'ˆ__debug__/', include(debug_toolbar.urls))]

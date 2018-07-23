@@ -28048,3 +28048,54 @@ Traceback (most recent call last):
   File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/db/models/query.py", line 380, in get
     self.model._meta.object_name
 gravitaround.core.app.models.DoesNotExist: User matching query does not exist.
+ERROR 2018-07-23T15:08:37.022121+02:00 django.request Internal Server Error: / correlation_id=22fbfbe4-3022-45b5-a623-b73b150bd6a8
+Traceback (most recent call last):
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "/Users/thomassimmer/gravitaround_github/gravitaround/ops/app/views.py", line 96, in home
+    if request.session['id']:
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'id'
+ERROR 2018-07-23T15:12:53.923631+02:00 django.request Internal Server Error: /gravitaround/ correlation_id=a24ef0e9-99ea-4ea8-9826-bfe24a2bd2d8
+Traceback (most recent call last):
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "/Users/thomassimmer/gravitaround_github/gravitaround/ops/app/views.py", line 96, in home
+    if request.session['id']:
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'id'
+ERROR 2018-07-23T15:15:02.583239+02:00 django.request Internal Server Error: /gravitaround/favourite_group/ correlation_id=e0115492-fcd8-42d8-bdd6-ce20879f3d2f
+Traceback (most recent call last):
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 249, in _legacy_get_response
+    response = self._get_response(request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "/Users/thomassimmer/gravitaround_github/gravitaround/ops/app/views.py", line 124, in favourite_group
+    return HttpResponse(processes.list_favourite_group(request.session['id']))
+  File "/Users/thomassimmer/venv/lib/python3.6/site-packages/django/contrib/sessions/backends/base.py", line 57, in __getitem__
+    return self._session[key]
+KeyError: 'id'

@@ -93,11 +93,14 @@ def contact(request):
 
 
 def home(request):
-    if request.session['id']:
-        groups = processes.list_favourite_group(request.session['id'])
-        return render(request, 'app/globe.html',
-                      {'group_name': [{'name': group[0],
-                                       'sats': group[1]} for group in groups], })
+    try:
+        if request.session['id']:
+            groups = processes.list_favourite_group(request.session['id'])
+            return render(request, 'app/globe.html',
+                          {'group_name': [{'name': group[0],
+                                           'sats': group[1]} for group in groups], })
+    except KeyError:
+        pass
     return render(request, 'app/home.html')
 
 

@@ -18,6 +18,13 @@ To install Postgres on Mac, you need first to install HomeBrew : ::
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew install Postgres
 
+To install Python : https://www.python.org/
+
+To install Postgres on Mac, you need first to install HomeBrew : ::
+
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ brew install Postgres
+
 Installation
 ------------
 
@@ -42,7 +49,11 @@ You possibly need to create a database and a user ::
     $ postgres=# CREATE DATABASE gravitaround;
     $ postgres=# CREATE USER gravitaround WITH SUPERUSER;
     $ postgres=# \q;
+<<<<<<< HEAD
+
+=======
     
+>>>>>>> 0920caa77b25443c04525847f3ae087d69c5f3f7
 
     $ ./manage.py makemigrations app
     $ ./manage.py migrate
