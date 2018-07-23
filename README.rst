@@ -49,11 +49,6 @@ You possibly need to create a database and a user ::
     $ postgres=# CREATE DATABASE gravitaround;
     $ postgres=# CREATE USER gravitaround WITH SUPERUSER;
     $ postgres=# \q;
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 0920caa77b25443c04525847f3ae087d69c5f3f7
 
     $ ./manage.py makemigrations app
     $ ./manage.py migrate
