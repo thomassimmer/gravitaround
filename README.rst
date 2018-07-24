@@ -12,6 +12,8 @@ You'll need :
 Installation
 ------------
 
+Tap in your terminal ::
+
     $ git clone https://github.com/thomassimmer/gravitaround.git
     $ ./gravitaround/launch.sh
 
