@@ -2,6 +2,7 @@
 
 cd gravitaround
 
+sudo chown -R $USER:admin /usr/local
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install Postgres
 brew install gdal
