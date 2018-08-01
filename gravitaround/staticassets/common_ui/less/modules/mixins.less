@@ -1,0 +1,14 @@
+.nav-link {
+  background-color: #009DDF;
+  background-image: none;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  color: #fff;
+}
+/* for using CSS calc with any property */
+.calc(@prop; @val) {
+  @{prop}: calc(~'@{val}');
+  @{prop}: -moz-calc(~'@{val}');
+  @{prop}: -webkit-calc(~'@{val}');
+  @{prop}: -o-calc(~'@{val}');
+}

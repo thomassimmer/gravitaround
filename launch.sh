@@ -13,6 +13,9 @@ virtualenv -p python3 venv
 pip install .
 echo updating...
 
+osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'tell application "Terminal" to do script "psql postgres" in selected tab of the front window' -e 'tell application "Terminal" to do script "CREATE DATABASE gravitaround;" in selected tab of the front window'
+
+
 osascript -e 'tell application "Terminal" to activate' -e 'tell application "System Events" to tell process "Terminal" to keystroke "t" using command down' -e 'tell application "Terminal" to do script "postgres -D /usr/local/var/postgres" in selected tab of the front window'
 
 ./manage.py makemigrations app

@@ -113,8 +113,6 @@ gvenv/
 *.swp
 .idea/
 
-# Django stuff
-staticassets/
 
 # Confidential stuff
 .credentials.json
