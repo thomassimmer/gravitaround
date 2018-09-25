@@ -126,13 +126,20 @@
     <script>
 
         var viewer = new Cesium.Viewer('cesiumContainer', {
-        timeline : false,
-        animation : false,
-        fullscreenButton : false,
-        geocoder : false
+            imageryProvider : new Cesium.ArcGisMapServerImageryProvider({
+                url : 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer'
+            }),
+            timeline : false,
+            animation : false,
+            fullscreenButton : false,
+            geocoder : false
         });
 
+        var layers = viewer.imageryLayers;
+        var earthAtNight = layers.addImageryProvider(new Cesium.IonImageryProvider({ assetId: 3812 }));
+
         var scene = viewer.scene;
+
     </script>
 
     {% if request.session.id %}
