@@ -74,11 +74,14 @@ def deconnect(request):
 
 
 def favourite(request):
-    if request.session['id']:
-        groups = processes.list_favourite_group(request.session['id'])
-        return render(request, 'app/favourite.html',
-                      {'group_name': [{'name': group[0],
-                                       'sats': group[1]} for group in groups], })
+    try:
+        if request.session['id']:
+            groups = processes.list_favourite_group(request.session['id'])
+            return render(request, 'app/favourite.html',
+                          {'group_name': [{'name': group[0],
+                                           'sats': group[1]} for group in groups], })
+    except KeyError:
+        pass
     return render(request, 'app/favourite.html')
 
 
@@ -121,8 +124,11 @@ def update(request):
 
 
 def favourite_group(request):
-    return HttpResponse(processes.list_favourite_group(request.session['id']))
-
+    try:
+        return HttpResponse(processes.list_favourite_group(request.session['id']))
+    except KeyError:
+        pass
+    return render(request, 'app/favourite.html')
 
 def group_creation(request):
     name = request.POST['nom']
