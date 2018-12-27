@@ -18,3 +18,6 @@ Tap in your terminal ::
     $ ./gravitaround/launch.sh
 
 
+You should see this : 
+
+![capture d ecran 2018-12-27 a 15 17 56](https://user-images.githubusercontent.com/37903526/50483243-24bf6b80-09eb-11e9-9cb8-ba7502012394.png)
