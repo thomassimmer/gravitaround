@@ -21,7 +21,7 @@ setup(
     keywords="Gravit Around",
     # url="https://github.com/",
     packages=find_packages(),
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     install_requires=[
          # General
          'Django<2',  # check our other projects to see which version you need to install
