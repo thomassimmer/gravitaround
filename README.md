@@ -15,7 +15,9 @@ Installation
 Tap in your terminal ::
 
     $ git clone https://github.com/thomassimmer/gravitaround.git
-    $ docker-compose up --build
+    $ cd gravitaround
+    $ docker-compose build
+    $ docker-compose up
 
 
 You should see this : 
