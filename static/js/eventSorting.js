@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 
+    console.log("static")
     let nomRecherche = listeNomCreation();
     let paysRecherche = listePaysCreation();
     let favoris = listeFavorisCreation();
@@ -44,7 +45,6 @@ $( document ).ready(function() {
         $('#favourites').toggleClass("whitecolor");
     }
 
-    setInterval(update, 6000);
 
     $(function () {
         $.widget("custom.catcomplete", $.ui.autocomplete, {
@@ -257,6 +257,7 @@ $( document ).ready(function() {
 
 
     function update() {
+        console.log("update...")
         $("#updateButton").toggleClass("down");
         // Uploading is complete, we put the button off
         $.ajax({
@@ -481,7 +482,7 @@ $( document ).ready(function() {
                         name: nameSat,
                         position: Cesium.Cartesian3.fromDegrees(longitude, latitude, altitude),
                         model: {
-                            uri: '/static/cesium/Apps/SampleData/models/CesiumSatellite/ISSComplete1.glb',
+                            uri: '/static/satellite_models/ISSComplete1.glb',
                             scale: 200000.0
                         },
                         description: "\
@@ -1152,7 +1153,7 @@ function display(colonne = "", like = "") {
                     name: nameSat,
                     position: Cesium.Cartesian3.fromDegrees(longitude, latitude, altitude),
                     model: {
-                        uri: '/static/cesium/Apps/SampleData/models/CesiumSatellite/ISSComplete1.glb',
+                        uri: '/static/satellite_models/ISSComplete1.glb',
                         scale: 200000.0
                     },
                     description: "\

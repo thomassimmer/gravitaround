@@ -9,23 +9,19 @@
 
 #cesiumContainer
 {
-width : 77% ;
-padding: 0;
-display: flex;
+width : calc(100% - 400px) ;
+display:flex;
 }
 
 #tri
 {
-width : 23% ;
-margin-right: 1px;
-padding: 0;
-background-color: rgba(0, 0, 0, 0.8);
+width : 400px ;
 }
 
 #conteneur
 {
 display: flex;
-height : 115%;
+height : 82%;
 background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -54,7 +50,7 @@ font-family: 'Montserrat';
 #page
 {
 height :100%;
-
+overflow : hidden;
 }
 
  #page, #msg, .container
@@ -110,6 +106,9 @@ font-family: 'Montserrat';
 cursor:pointer;
 }
 
+nav {
+	height: 5%;
+}
 
 h2
 {
@@ -263,4 +262,14 @@ visibility: hidden;
 .whitecolor
 {
 color : white;
+}
+
+
+#baseLayerPickerContainer{
+	position: relative;
+    left: 95%;
+    top: 2%;
+    width: 36px;
+    height: 36px;
+    z-index: 1;
 }

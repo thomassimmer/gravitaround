@@ -1,3 +1,0 @@
--e .
-
-polydev[django]
