@@ -97,6 +97,29 @@ $( document ).ready(function() {
             }
         })
 
+        
+        function onReady(callback) {
+            var intervalId = window.setInterval(function() {
+                const hasBeenUpdated = document.cookie
+                  .split('; ')
+                  .find(row => row.startsWith('hasBeenUpdated'))
+                  .split('=')[1];
+                if (hasBeenUpdated) {
+                    window.clearInterval(intervalId);
+                    callback.call(this);
+                }
+            }, 1000);
+        }
+
+        function setVisible(selector, visible) {
+            document.querySelector(selector).style.display = visible ? 'block' : 'none';
+        }
+
+        onReady(function() {
+            setVisible('#loading', false);
+        });
+
+        update();
     });
 
     $("#recherchePaysBar").autocomplete({
@@ -428,7 +451,8 @@ $( document ).ready(function() {
                                 }
                             }
                         });
-                    }
+                    }                    
+                    document.cookie = "hasBeenUpdated=true";
                 }
             }
         });
