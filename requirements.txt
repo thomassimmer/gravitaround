@@ -1,4 +1,4 @@
-Django==2.2
+Django==2.2.13
 django-localflavor<2
 django-plus
 django-dirtyfields
