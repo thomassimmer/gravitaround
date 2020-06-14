@@ -1,0 +1,71 @@
+{% load i18n static %}
+
+<!DOCTYPE html>
+<head>
+    {% block base_css %}
+        <link href="{% static '/css/all.css' %}" rel="stylesheet" />		
+		<link href="https://cesium.com/downloads/cesiumjs/releases/1.70.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+    {% endblock %}
+    {% block base_js %}
+        <script type="text/javascript" src="{% static 'css/fontawesome-free-5.0.6/svg-with-js/js/fontawesome-all.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/eventSorting.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/eventLanguage.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/eventCV.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/eventFavorites.js' %}"></script>
+		<script src="https://cesium.com/downloads/cesiumjs/releases/1.70.1/Build/Cesium/Cesium.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    {% endblock %}
+    {% block images %}
+        <link href="/static/images/satellite.png" rel="icon" />
+    {% endblock %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="author" content="Thomas Simmer" >
+  <title> Gravit'Around </title>
+</head>
+<body>
+    <div id="page">
+        <header>
+            <div class="LanguageButton">
+                <div class="Language" style="font-size: 0.8em; cursor:pointer;" id="en">En</div>
+                <div class="Language" style="font-size: 0.8em; cursor:pointer;" id="fr" >Fr</div>
+                <div class="Language" style="font-size: 0.8em; cursor:pointer;" id="ru" >Ru</div>
+            </div>
+            <h1>
+                <a href="{% url 'app:home' %}" id="title">Gravit'Around</a>
+            </h1>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <i class="fa-inverse fas fa-globe" ></i>
+                    <a href="{% url 'app:home' %}" id="globe">  Globe</a>
+                </li>
+                <li>
+                    <i class="fa-inverse fas fa-heart" ></i>
+                    <a href="{% url 'app:favourite' %}" id="favourites">  Favourites</a>
+                <li>
+                    <i class="fa-inverse fas fa-key" ></i>
+                    <a href="{% url 'app:connexion' %}" id="register">  Register</a>
+                </li>
+                <li>
+                    <i class="fa-inverse fas fa-user" ></i>
+                    <a href="{% url 'app:contact' %}" id="contact">  Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        {% block messages %}
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+        {% endblock %}
+        {% block content %}{% endblock %}
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+Django==2.2
+django-localflavor<2
+django-plus
+django-dirtyfields
+lxml
+requests
+psycopg2
+raven
+ephem

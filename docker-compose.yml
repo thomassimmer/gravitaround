@@ -1,0 +1,41 @@
+version: '3'
+
+services:  
+  db:
+    restart: always
+    image: postgres
+    environment:
+      - POSTGRES_USER=gravitaround
+      - POSTGRES_PASSWORD=gravitaround
+      - POSTGRES_DB=gravitaround
+    volumes:
+      - database:/var/lib/postgresql/data
+  makemigration:
+    build: .
+    command: python manage.py makemigrations gravitaround_app
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  migration:
+    build: .
+    command: python manage.py migrate
+    volumes:
+      - .:/app
+    depends_on:
+      - makemigration
+      - db
+  web: 
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - makemigration
+      - migration
+      - db
+
+volumes:
+  database:
