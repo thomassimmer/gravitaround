@@ -23,7 +23,6 @@ def authentication(request):
         request.session['nom'] = qs.last_name
         request.session['prenom'] = qs.first_name
         request.session['id'] = qs.user_id
-        messages.success(request, "Welcome " + request.session['prenom'] + " " + request.session['nom'])
         return render(request, 'app/favourite.html')
 
     except app_models.User.DoesNotExist:
@@ -56,7 +55,6 @@ def new_user(request):
         request.session['nom'] = last_name
         request.session['prenom'] = first_name
         request.session['id'] = user_id
-        messages.success(request, "Welcome " + request.session['prenom'] + " " + request.session['nom'])
         return render(request, 'app/favourite.html')
 
     except IntegrityError:

@@ -197,8 +197,8 @@ def main():
         n = float(informations[7][:11])                       # Revolutions per day
         mean_anomaly = float(informations[6])              # Mean anomaly
         e = float("0."+informations[4])                       # Eccentricity
-        semi_major_axis = int(((3.986004418*10**14)**(1/3))/((2*n*3.1415/86400)**(2/3)))
-        semi_minor_axis = int(semi_major_axis*((1-e**2)**0.5))
+        semi_major_axis = float(((3.986004418*10**14)**(1/3))/((2*n*3.1415/86400)**(2/3)))
+        semi_minor_axis = float(semi_major_axis*((1-e**2)**0.5))
         arg = float(informations[5])
         source = "www.google.com"
 

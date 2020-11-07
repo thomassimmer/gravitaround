@@ -1,7 +1,5 @@
 let liste_favoris = [,];
 
-let nomRecherche = listeNomCreation();
-
 $(document).ready(function()
 {
 
@@ -144,29 +142,3 @@ $( "#delete_button2" ).click(function () {
     });
 
 });
-
-
-function listeNomCreation() {
-        // We create a list containing all satellites'name.
-        let liste = [];
-        $.ajax({
-            url: "/gravitaround/rechercheSat/",
-            type: 'GET',
-            dataType: 'html',
-            success: function (code_html) {
-                let satellite = code_html.substring(1, code_html.length - 1);
-                let array = satellite.split(")(");
-                for (let i = 0; i < array.length; i++) {
-                    let element = array[i].split(",");
-                    liste.push({
-                        label: element[0].substring(1, element[0].length - 1),
-                        category: element[1].substring(2, element[1].length - 1)
-                    });
-                }
-            },
-            error: function (resultat, statut, erreur) {
-            }
-        });
-
-        return liste;
-    }

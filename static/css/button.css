@@ -42,6 +42,7 @@ box-shadow: 0 0 0 1px white inset,
     /* prevent horizontal scrollbar */
     overflow-x: hidden;
     list-style: none;
+    z-index: 3;
 
 }
   /* IE 6 doesn't support max-height

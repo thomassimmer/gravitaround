@@ -14,7 +14,7 @@
         <script type="text/javascript" src="{% static 'js/eventLanguage.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/eventCV.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/eventFavorites.js' %}"></script>
-		<script src="https://cesium.com/downloads/cesiumjs/releases/1.70.1/Build/Cesium/Cesium.js"></script>
+		<script src="https://cesium.com/downloads/cesiumjs/releases/1.75/Build/Cesium/Cesium.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     {% endblock %}
@@ -38,6 +38,16 @@
             <h1>
                 <a href="{% url 'app:home' %}" id="title">Gravit'Around</a>
             </h1>
+            {% if request.session.id %}
+            <div id='msg'> You are connected as {{ request.session.prenom }} {{ request.session.nom }} </br>
+                <a href="{% url 'app:deconnect' %}" style='color : grey;'>Se déconnecter</a>
+            </div>
+            {%  else %}
+            <div id='msg'>
+                Create an account to save your favourite satellite</br>
+                <a href="{% url 'app:connexion' %}" style='color : grey;'>Se connecter</a>
+            </div>
+            {% endif %}
         </header>
         <nav>
             <ul>

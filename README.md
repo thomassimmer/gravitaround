@@ -20,7 +20,8 @@ Tap in your terminal ::
     $ docker-compose up
 
 
-You should see this in browser at 127.0.0.0:8000 (click on right buttons to see satellites) : 
+You should see this in browser at http://0.0.0.0:8000/ : 
 
 ![capture d ecran 2018-12-27 a 15 17 56](https://user-images.githubusercontent.com/37903526/50483243-24bf6b80-09eb-11e9-9cb8-ba7502012394.png)
 
+Note :: The globe can appear smoother on Safari or Firefox than on Chrome.
